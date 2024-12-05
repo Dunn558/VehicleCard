@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:VehicleCard.ViewModels"
+             xmlns:models="clr-namespace:VehicleCard.Models"
+             x:Class="VehicleCard.Views.MainPage"
+             Title="VehicleCards">
+    <ContentPage.BindingContext>
+        <vm:VehicleViewModel/>
+    </ContentPage.BindingContext>
+
+    <CollectionView ItemsSource="{Binding Vehicles}" Margin="16">
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical"
+                            ItemSpacing="18"/>
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:Vehicle">
+                <Border MinimumWidthRequest="100" MinimumHeightRequest="0">
+                    <Grid RowDefinitions="0.8*,0.4*">
+                        <Image 
+                               Source="{Binding ImageUrl}"
+                               Aspect="AspectFill"
+                               />
+                        <Grid ColumnDefinitions="auto,auto,auto,auto,*,auto,auto,auto,auto,auto"
+                              RowDefinitions="auto,auto,auto,auto,auto"
+                              Grid.Row="1">
+                            <Label Grid.Column="1"
+                                   Text="{Binding Make}"
+                                   Margin="8,0,0,8"/>
+                            <Label Grid.Column="2"
+                                   Text="{Binding Model}"
+                                   Margin="8,0,0,8"/>
+                            
+                            <Label Grid.Column="1"
+                                   Grid.Row="2"
+                                   Text="Horsepower ="
+                                   Margin="8,0,0,8"/>
+                             
+                            <Label Grid.Column="2"
+                                   Grid.Row="2"
+                                   Text="{Binding Horsepower}"
+                                   Margin="8,0,0,8"/>
+                            <Label Grid.Column="1"
+                                   Grid.Row="3"
+                                   Text="TopSpeed="
+                                   Margin="8,0,0,8"/>
+                            <Label Grid.Column="2"
+                                   Grid.Row="3"
+                                   Text="{Binding TopSpeed}"
+                                   Margin="8,0,0,8"/>
+                            <Label Grid.Column="1"
+                                   Grid.Row="4"
+                                   Text="Wheels ="
+                                   Margin="8,0,0,8"/>
+                            <Label Grid.Column="2"
+                                   Grid.Row="4"
+                                   Text="{Binding Wheels}"
+                                   Margin="8,0,0,8"/>
+                            <Button Grid.Column="5" Text="Add a Car" Grid.RowSpan="2" Background="Green"> 
+                                
+                            </Button>
+                            <Button Grid.Column="4" Text="Edit a Car" Grid.RowSpan="2" Background="Grey">
+                            </Button>
+
+
+                        </Grid>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
