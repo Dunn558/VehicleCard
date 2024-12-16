@@ -33,6 +33,18 @@ namespace VehicleCard.Models
             this.TopSpeed = topSpeed;
             this.ImageUrl = imageUrl;
         }
+        public virtual void Horn()
+        {
+            // Car beep the horn
+            // Truck beep the horn
+        }
+        public override void Horn() 
+        { 
+        }
+        
+
+        
+
     }
-   
+
 }
