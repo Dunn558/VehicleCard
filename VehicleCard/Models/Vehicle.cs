@@ -35,12 +35,10 @@ namespace VehicleCard.Models
         }
         public virtual void Horn()
         {
-            // Car beep the horn
-            // Truck beep the horn
+            // Beep the horn
+            
         }
-        public override void Horn() 
-        { 
-        }
+
         
 
         
