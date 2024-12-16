@@ -60,7 +60,7 @@
                             <Button Grid.Column="5" Text="Add a Car" Grid.RowSpan="2" Background="Green"> 
                                 
                             </Button>
-                            <Button Grid.Column="4" Text="Edit a Car" Grid.RowSpan="2" Background="Grey">
+                            <Button Grid.Column="4" Text="Edit a Car" Grid.RowSpan="2" Background="Blue">
                             </Button>
 
 
