@@ -7,37 +7,30 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace VehicleCard.Models
 {
-    public partial class Vehicle: ObservableObject
+    public partial class Vehicle : Properties
     {
-        [ObservableProperty]
-        private Guid id;
-        [ObservableProperty]
-        private string make;
-        [ObservableProperty]
-        private string model;
-        [ObservableProperty]
-        private int horsepower;
-        [ObservableProperty]
-        private int wheels;
-        [ObservableProperty]
-        private int topSpeed;
-        [ObservableProperty]
-        private string imageUrl;
-        public Vehicle(string make, string model, int horsepower, int topSpeed, string imageUrl, int wheels)
+       private Guid id;
+
+       public Guid Id
         {
-            this.Id = Guid.NewGuid();
+            get { return id; }
+            set { id = value; }
+        }
+
+
+        public Vehicle(string make, string model, int horsepower, int topSpeed, string imageUrl, int wheels) : base(make, model, horsepower, topSpeed, imageUrl, wheels)
+        {
+            this.id = Guid.NewGuid();
             this.Make = make;
             this.Model = model;
             this.Horsepower = horsepower;
+            this.Topspeed = topSpeed;
+            this.Imageurl = imageUrl;
             this.Wheels = wheels;
-            this.TopSpeed = topSpeed;
-            this.ImageUrl = imageUrl;
+
         }
-        public virtual void Horn()
-        {
-            // Beep the horn
-            
-        }
+         
+       
 
         
 

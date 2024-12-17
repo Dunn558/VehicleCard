@@ -4,6 +4,7 @@
              xmlns:vm="clr-namespace:VehicleCard.ViewModels"
              xmlns:models="clr-namespace:VehicleCard.Models"
              x:Class="VehicleCard.Views.MainPage"
+             
              Title="VehicleCards">
     <ContentPage.BindingContext>
         <vm:VehicleViewModel/>
@@ -15,11 +16,12 @@
                             ItemSpacing="18"/>
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="models:Vehicle">
+        
+        <DataTemplate x:DataType="models:Vehicle">
                 <Border MinimumWidthRequest="100" MinimumHeightRequest="0">
                     <Grid RowDefinitions="0.8*,0.4*">
                         <Image 
-                               Source="{Binding ImageUrl}"
+                               Source="{Binding Imageurl}"
                                Aspect="AspectFill"
                                />
                         <Grid ColumnDefinitions="auto,auto,auto,auto,*,auto,auto,auto,auto,auto"
@@ -47,7 +49,7 @@
                                    Margin="8,0,0,8"/>
                             <Label Grid.Column="2"
                                    Grid.Row="3"
-                                   Text="{Binding TopSpeed}"
+                                   Text="{Binding Topspeed}"
                                    Margin="8,0,0,8"/>
                             <Label Grid.Column="1"
                                    Grid.Row="4"
@@ -57,17 +59,17 @@
                                    Grid.Row="4"
                                    Text="{Binding Wheels}"
                                    Margin="8,0,0,8"/>
-                            <Button Grid.Column="5" Text="Add a Car" Grid.RowSpan="2" Background="Green"> 
-                                
-                            </Button>
-                            <Button Grid.Column="4" Text="Edit a Car" Grid.RowSpan="2" Background="Blue">
-                            </Button>
+                           
 
 
                         </Grid>
                     </Grid>
                 </Border>
             </DataTemplate>
+            <Button Grid.Column="5" Text="Add a Car" Grid.RowSpan="2" Background="Green" Command="{Binding AddVehicleCommand}">
+
+            </Button>
+
         </CollectionView.ItemTemplate>
     </CollectionView>
 </ContentPage>

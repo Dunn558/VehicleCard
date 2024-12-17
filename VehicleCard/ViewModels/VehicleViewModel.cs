@@ -25,7 +25,7 @@ namespace VehicleCard.ViewModels
 
         void AddSampleData()
         {
-            Vehicles.Add(new Vehicle("ford", "Fiesta", 300, 150, "dotnet_bot.png", 4));
+            Vehicles.Add(new Vehicle("Ford", "Fiesta", 300, 150, "dotnet_bot.png", 4));
 
 
 
@@ -35,11 +35,7 @@ namespace VehicleCard.ViewModels
 
 
         }
-        void AddVehicle(string make, string model, int horsepower, int topSpeed, string imageUrl, int wheels)
-        {
-            Vehicle vehicle = new Vehicle(make, model, horsepower, topSpeed, imageUrl, wheels);
-            Vehicles.Add(vehicle);
-        }
+
        
 
 
